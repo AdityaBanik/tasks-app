@@ -1,21 +1,22 @@
-import { Injectable, Pipe, PipeTransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { Task } from '../services/tasks.service';
 
 @Pipe({
   name: 'filterTasks'
 })
-@Injectable()
 export class FilterTasksPipe implements PipeTransform {
-  transform(taskList: Task[], filter: string): Task[] {
+  transform(dataSource: MatTableDataSource<Task>, filter: string): MatTableDataSource<Task> {
+    const taskList = dataSource.data;
     switch (filter) {
       case 'personal':
-        return taskList.filter(task => !task.isGlobal);
+        return new MatTableDataSource(taskList.filter(task => !task.isGlobal));
       case 'leader':
-        return taskList.filter(task => task.isLeader);
+        return new MatTableDataSource(taskList.filter(task => task.isLeader));
       case 'others':
-        return taskList.filter(task => !task.isLeader && task.isGlobal);
+        return new MatTableDataSource(taskList.filter(task => !task.isLeader && task.isGlobal));
       default:
-        return taskList;
+        return dataSource;
     }
   }
 }

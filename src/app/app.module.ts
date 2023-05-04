@@ -14,13 +14,25 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { FilterTasksPipe } from './pipes/filterTasks.pipe';
+import { MatSortModule } from '@angular/material/sort';
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { ModalComponent } from './pages/tasks/modal/modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     TasksComponent,
-    FilterTasksPipe
+    FilterTasksPipe,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +43,18 @@ import { FilterTasksPipe } from './pipes/filterTasks.pipe';
     MatTableModule,
     FormsModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSortModule,
+    MatCardModule,
+    MatListModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatNativeDateModule,
+    MatInputModule,
+    MatButtonModule
+
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

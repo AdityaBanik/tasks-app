@@ -1,0 +1,16 @@
+li {
+   
+    a {
+        @apply text-base font-black no-underline block text-center py-4 rounded-tr-2xl rounded-br-2xl;
+    }
+}
+
+aside {
+    @apply mt-10 ;
+}
+
+.active {
+    @apply bg-black text-white;
+
+    &:hover {}
+}

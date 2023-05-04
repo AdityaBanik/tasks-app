@@ -1,17 +1,24 @@
+<header class="flex justify-between items-center p-4 ">
+  <h1 class="!m-0 ">Task Control</h1>
+  <div class="flex gap-10 mx-8 items-center">
+    <h3 class="!m-0">My Tasks : {{personalTasks}}</h3>
+    <h3 class="!m-0">Teams Tasks : {{globalTasks}}</h3>
+  </div>
 
+</header>
 
-
-
-
-<ul>
-  <li>
-    <a routerLink="/" class="underline">Home</a>
-  </li>
-  <li>
-    <a routerLink="/tasks" class="underline">Tasks</a>
-  </li>
-</ul>
-
-
-
-<router-outlet></router-outlet>
+<div class="flex">
+  <aside class="w-1/6">
+    <ul>
+      <li>
+        <a routerLink="/" [ngClass]="{ 'active': activeLink === '/' }">Home</a>
+      </li>
+      <li>
+        <a routerLink="/tasks" [ngClass]="{ 'active': activeLink === '/tasks' }">Tasks</a>
+      </li>
+    </ul>
+  </aside>
+  <main class="container w-4/5 max-w-6xl mx-auto mt-10 ">
+    <router-outlet></router-outlet>
+  </main>
+</div>

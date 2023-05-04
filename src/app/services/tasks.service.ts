@@ -32,7 +32,7 @@ export class TasksService {
 
   getTaskList(): Observable<Task[]> {
     // return the taskList as an observable
-    return this.taskListSubject.asObservable();
+    return this.taskListSubject;
   }
 
   addTask(task: Task) {
